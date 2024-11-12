@@ -11,8 +11,8 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 
 class ChatBubbleOutgoingNoTailShape(
-  val cornerRadius : Dp = 10.dp,
-  val tipSize : Dp = cornerRadius / 2
+  private val cornerRadius : Dp = 10.dp,
+  private val tipSize : Dp = cornerRadius / 2
 ) : Shape {
   override fun createOutline(
     size: Size,
