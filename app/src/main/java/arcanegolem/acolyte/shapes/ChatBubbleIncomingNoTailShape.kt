@@ -24,7 +24,7 @@ class ChatBubbleIncomingNoTailShape(
     val path = Path().apply {
       addRoundRect(
         RoundRect(
-          left = tipSize,
+          left = cornerRadius,
           top = 0f,
           right = size.width,
           bottom = size.height - tipSize,

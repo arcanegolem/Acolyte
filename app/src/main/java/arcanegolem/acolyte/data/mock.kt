@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import kotlin.random.Random
 
-private val sampleAttachments = listOf(null, R.drawable.landscape, R.drawable.blbl, R.drawable.broken, null, null, null, null)
+private val sampleAttachments = listOf(null, R.drawable.landscape, null, null, null, R.drawable.blbl, null, null, null, R.drawable.broken, null, null, null, null)
 private val sdf = SimpleDateFormat("HH:mm", Locale.ROOT)
 
 fun mockMessages(amount : Int) : List<Message> {
@@ -13,9 +13,10 @@ fun mockMessages(amount : Int) : List<Message> {
 
   repeat(amount) {
     val attachment = sampleAttachments[Random.nextInt(0, sampleAttachments.size)]
+    val textLength = Random.nextInt(200)
     messages.add(
       Message(
-        text = if (attachment == R.drawable.landscape) "" else getRandomString(Random.nextInt(200)),
+        text = getRandomString(if (textLength == 0) 5 else textLength),
         isIncoming = Random.nextBoolean(),
         attachment = attachment,
         deliveryTime = sdf.format(System.currentTimeMillis())

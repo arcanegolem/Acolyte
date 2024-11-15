@@ -65,4 +65,10 @@ dependencies {
 
   // COIL COMPOSE
   implementation(libs.coil.compose)
+
+  // HAZE
+  implementation(libs.haze)
+
+  // MATERIAL ICONS
+  implementation(libs.androidx.material.icons.extended)
 }

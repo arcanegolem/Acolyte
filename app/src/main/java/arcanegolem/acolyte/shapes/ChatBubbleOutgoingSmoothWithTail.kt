@@ -1,5 +1,6 @@
 package arcanegolem.acolyte.shapes
 
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline
@@ -10,7 +11,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 
-class ChatBubbleOutgoingNoTailShape(
+class ChatBubbleOutgoingSmoothWithTail(
   private val cornerRadius : Dp = 10.dp,
   private val tipSize : Dp = cornerRadius / 2
 ) : Shape {
@@ -28,8 +29,10 @@ class ChatBubbleOutgoingNoTailShape(
           top = 0f,
           right = size.width - cornerRadius,
           bottom = size.height - tipSize,
-          radiusX = cornerRadius,
-          radiusY = cornerRadius
+          topLeftCornerRadius = CornerRadius(cornerRadius),
+          topRightCornerRadius = CornerRadius(cornerRadius),
+          bottomLeftCornerRadius = CornerRadius(cornerRadius),
+          bottomRightCornerRadius = CornerRadius(tipSize)
         )
       )
     }
